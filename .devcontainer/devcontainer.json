@@ -1,0 +1,17 @@
+{
+  "name": "Python Dev Environment",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.colorTheme": "One Dark Pro"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-python-envs"
+      ]
+    }
+  }
+}

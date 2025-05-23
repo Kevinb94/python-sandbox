@@ -1,0 +1,2 @@
+# Ignore the customers_out.parquet folder
+customers_out.parquet/
