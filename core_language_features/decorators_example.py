@@ -57,17 +57,38 @@ class Person:
 
     def __str__(self):
         return f"Person(name={self.name}, age={self.age})"
+    
+
+
+
+
+def log_calls(func):
+    def wrapper(*args, **kwargs):
+        print(f"[LOG] Calling {func.__name__} with {args}, {kwargs}")
+        result = func(*args, **kwargs)
+        print(f"[LOG] {func.__name__} returned {result}")
+        return result
+    return wrapper
+
+@log_calls
+def multiply(x, y):
+    return x * y
+
+
+
 
 # Example usage
 if __name__ == "__main__":
-    say_hello()
+    # say_hello()
 
-    # Example 2 usage
-    greet("Alice")
+    # # Example 2 usage
+    # greet("Alice")
 
-    # Example 3 usage
-    print(say_message("This is a decorated message."))
+    # # Example 3 usage
+    # print(say_message("This is a decorated message."))
 
-    # Example usage for class decorator
-    person = Person("John", 30)
-    print(person)
+    # # Example usage for class decorator
+    # person = Person("John", 30)
+    # print(person)
+    multiply(3, 4)
+    multiply(5, 6)
